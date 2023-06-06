@@ -637,6 +637,3 @@
 //     return modelCars;
 // }
 // console.log(search(5000, 10000));
-
-
-

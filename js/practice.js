@@ -740,6 +740,45 @@
 //   modalAuto.show();
 // }
 
+// ===================================================================
+
+let player = 'X';
+
+const container = document.querySelector('.content')
+const btnRestart = document.querySelector('.restart')
+
+function createMarkup() {
+    let markup = "";
+    for (let i = 1; i <= 9; i += 1){
+        markup += `<div class="item" data-id=${i}></div>`;
+    }
+    
+    // container.insertAdjacentHTML('afterbegin', markup)
+    container.innerHTML=markup
+}
+
+createMarkup()
+
+container.addEventListener('click', handlerClick)
+
+function handlerClick(event) {
+    if (!event.target.classList.contains('item') || event.target.textContent) return;
+
+    event.target.textContent = player;
+    player = player === 'X' ? 'O' : 'X';
+
+    const id = event.target.dataset.id
+
+    console.log(event.target);
+}
+
+btnRestart.addEventListener('click', handlerRestart)
+
+function handlerRestart() {
+    createMarkup();
+    player = 'X'
+}
+
 
 
 

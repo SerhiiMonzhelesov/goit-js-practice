@@ -742,43 +742,116 @@
 
 // ===================================================================
 
-let player = 'X';
+// let player = 'X';
 
-const container = document.querySelector('.content')
-const btnRestart = document.querySelector('.restart')
+// const container = document.querySelector('.content')
+// const btnRestart = document.querySelector('.restart')
 
-function createMarkup() {
-    let markup = "";
-    for (let i = 1; i <= 9; i += 1){
-        markup += `<div class="item" data-id=${i}></div>`;
-    }
+// function createMarkup() {
+//     let markup = "";
+//     for (let i = 1; i <= 9; i += 1){
+//         markup += `<div class="item" data-id=${i}></div>`;
+//     }
     
-    // container.insertAdjacentHTML('afterbegin', markup)
-    container.innerHTML=markup
-}
+//     // container.insertAdjacentHTML('afterbegin', markup)
+//     container.innerHTML=markup
+// }
 
-createMarkup()
+// createMarkup()
 
-container.addEventListener('click', handlerClick)
+// container.addEventListener('click', handlerClick)
 
-function handlerClick(event) {
-    if (!event.target.classList.contains('item') || event.target.textContent) return;
+// function handlerClick(event) {
+//     if (!event.target.classList.contains('item') || event.target.textContent) return;
 
-    event.target.textContent = player;
-    player = player === 'X' ? 'O' : 'X';
+//     event.target.textContent = player;
+//     player = player === 'X' ? 'O' : 'X';
 
-    const id = event.target.dataset.id
+//     const id = event.target.dataset.id
 
-    console.log(event.target);
-}
+//     console.log(event.target);
+// }
 
-btnRestart.addEventListener('click', handlerRestart)
+// btnRestart.addEventListener('click', handlerRestart)
 
-function handlerRestart() {
-    createMarkup();
-    player = 'X'
-}
+// function handlerRestart() {
+//     createMarkup();
+//     player = 'X'
+// }
+
+// ============================================================
+
+// // Створити функцію яка буде розбивати початковий масив
+// на потрібну кількість елементів розділюячи на декілька масивів,
+//     повертає масив масивів
+// const data = [1, 2, 3, 4, 5, 6, 7, 8]; // [[1, 2], [3, 4],[5, 6],[7, 8]]
+
+// const newArray = [];
+
+// function foo(arr, size) {
+
+//     for (let i = 0; i < data.length; i += size){
+             
+//             newArray.push(data.slice(i, i+size));
+         
+//     }
+
+// return newArray
+// }
+
+// foo(data, 2)
+
+// console.log(newArray);
+
+// ===============================================================================
+
+// const elements ={
+//   weekDay: document.querySelector('.date-day'),
+//   monthDay: document.querySelector('.date'),
+//   month: document.querySelector('.date-month'),
+//   year: document.querySelector('.date-year'),
+//   clock: document.querySelector('.digital-clock'),
+//   arrowSeconds: document.querySelector('.clock-seconds__arrow'),
+//   arrowMin: document.querySelector('.clock-minutes__arrow'),
+//   arrowHour: document.querySelector('.clock-hours__arrow'),
+// }
+
+// const namesOfDay = ['Неділя', 'Понеділок','Вівторок', 'Середа', 'Четвер', 'Пятниця', 'Субота' ]
+
+// const namesOfMonth = ['Січень', 'Лютий', 'Березень', 'Квітень', 'Травень', 'Червень', 'Липень' , 'Серпень', 'Вересень', 'Жовтень', 'Листопад', 'Грудень'];
 
 
+
+// setInterval(() => {
+//   const date = new Date();
+//   const todayDate = date.getDate();
+//   const currday = date.getDay();
+//   const currMonth = date.getMonth();
+//   const currentYear = date.getFullYear();
+  
+//   elements.weekDay.textContent = namesOfDay[currday];
+//   elements.monthDay.textContent = todayDate;
+//   elements.month.textContent = namesOfMonth[currMonth];
+//   elements.year.textContent = currentYear;
+  
+  
+//   const hours = date.getHours();
+//   const minutes = date.getMinutes();
+//   const seconds = date.getSeconds();
+  
+//   const clock = `${hours.toString().padStart(2, '0')} : ${minutes.toString().padStart(2, '0')} : ${seconds.toString().padStart(2, '0')}`; 
+
+//  elements.clock.textContent = clock;
+
+//  const secondDeg = 360 / 60 * seconds;
+//  elements.arrowSeconds.style.transform = `rotate(${secondDeg}deg)`;
+
+//  const minutDeg = 360 / 60 * minutes;
+//  elements.arrowMin.style.transform = `rotate(${minutDeg}deg)`;
+ 
+// const hoursDeg = (360 / 12) * hours + minutes * 0.33;
+// elements.arrowHour.style.transform = `rotate(${hoursDeg}deg)`;
+
+// }, 1000)
 
 
